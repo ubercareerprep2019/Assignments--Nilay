@@ -1,6 +1,7 @@
 # Part 2: Arrays & Strings
 
-### `isStringPermutation(String s1, String s2)`
+### Function 1:
+#### `isStringPermutation(String s1, String s2)`
 The function uses 2 HashMaps to store the frequencies from each of the input strings and a HashSet to store all the unique characters (needed to interate over the 2 HashMaps in the end). The function basically calculates the frequency of each unique character from the strings and then returns true only if the frequencies match for every character. The runtime for this function should be O(n).
 
 Following assumptions made for this program-
@@ -10,5 +11,6 @@ Following assumptions made for this program-
 
 
 
-### `pairsThatEqualSum(int[] inputArray, int targetSum)`
+### Function 2:
+#### `pairsThatEqualSum(int[] inputArray, int targetSum)`
 The function first transfers all the integers from the array to a HashSet for maximium efficiency. For a given num1 there has to be only one num1 which will add to the target `(num2 = target - num1)`. So for each number, we look up if the HashSet contains its pair such that they add up to the target. If it does, it add this pair to a list which is eventually returned.

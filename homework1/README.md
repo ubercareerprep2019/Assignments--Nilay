@@ -10,9 +10,6 @@ Following assumptions made for this program-
 - The function will consider 2 strings to be valid permutations only if they have the same length.
 
 
-
-
-
 ### Function 2:
 #### `pairsThatEqualSum(int[] inputArray, int targetSum)`
 The function first transfers all the integers from the array to a HashSet for maximium efficiency. For a given num1 there has to be only one num1 which will add to the target `(num2 = target - num1)`. So for each number, we look up if the HashSet contains its pair such that they add up to the target. If it does, it add this pair to a list which is eventually returned.

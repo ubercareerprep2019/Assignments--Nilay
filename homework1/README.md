@@ -6,7 +6,7 @@ The function uses 2 HashMaps to store the frequencies from each of the input str
 
 Following assumptions made for this program-
 - The strings can contain any character including numbers and other characters.
-- The function is case sensitive, meaning that it will look at 'A' and 'a' differently and hence they won't be a valid permutation.
+- The function is case sensitive, meaning that it will look at `A` and `a` differently and hence they won't be a valid permutation.
 - The function will consider 2 strings to be valid permutations only if they have the same length.
 
 

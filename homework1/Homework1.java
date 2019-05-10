@@ -136,11 +136,11 @@ public class Homework1 {
 		// for every value from the hashtable, checks if there is another value which can add up to the target.
 		for(int n : arr) {
 
-			// Gets the frequency and reduces it by 1 to make sure it doesn't ust the same number twice unless it exists multiple times.
+			// Gets the frequency and reduces it by 1 to make sure it doesn't use the same number twice unless it exists multiple times.
 			int freq = hash.get(n);
 			hash.replace(n, freq-1);
 
-			// If there is a number (target-n) that exists in the table such that it isn't the number we're looking at right now, then we have a successful pair.
+			// If there is a number (target-n) that exists in the table, then we have a successful pair.
 			if(hash.containsKey(target-n) && hash.get(target-n) > 0) {
 				int[] a = {n, target-n};
 				list.add(a);

@@ -50,12 +50,13 @@ public class Homework1Test {
 		int target1 = 6;
 		
 		ArrayList<int[]> result = Homework1.pairsThatEqualSum(arr1, target1);
-		
+		System.out.println("Test 1-");
 		// checks if the resulting pairs actually add up to the target
 		for(int[] a : result) {
+			System.out.println(a[0] + " + " + a[1] + " = " + target1);
 			assertEquals(a[0] + a[1], target1);
 		}
-		
+		System.out.println("");
 		
 		
 		/*
@@ -65,34 +66,66 @@ public class Homework1Test {
 		int target2 = -210;
 	
 		result = Homework1.pairsThatEqualSum(arr2, target2);
-		
+		System.out.println("Test 2-");
 		// checks if the resulting pairs actually add up to the target
 		for(int[] a : result) {
+			System.out.println(a[0] + " + " + a[1] + " = " + target2);
 			assertEquals(a[0] + a[1], target2);
 		}
-		
+		System.out.println("");
 		
 		
 		/*
-		 * 		A crazy randomized way to check the function.
-		 */	
-		int n = 100;
-		int[] a = IntStream.range(0, n).toArray();
-		
-		for(int i = 0; i < n; i++) {
-			Random rand = new Random();
-			int num1 = rand.nextInt(50);
-			int num2 = rand.nextInt(50);
-			
-			int target = a[num1] + a[num2];
-			
-			result = Homework1.pairsThatEqualSum(a, target);
-			
-			// checks if the resulting pairs actually add up to the target
-			for(int[] array : result) {
-				assertEquals(array[0] + array[1], target);
-			}
+		 * 		Test with multiple iterations of numbers
+		 */
+		int[] arr3 = {2, 2, 3, 6, 5, 6, 7, -3, 9, -5};
+		int target3 = 4;
+		result = Homework1.pairsThatEqualSum(arr3, target3);
+		System.out.println("Test 3-");
+		// checks if the resulting pairs actually add up to the target
+		for(int[] a : result) {
+			System.out.println(a[0] + " + " + a[1] + " = " + target3);
+			assertEquals(a[0] + a[1], target3);
 		}
+		System.out.println("");
+		
+		
+		/*
+		 * 		Test with multiple iterations of numbers
+		 */
+		int[] arr4 = {5};
+		int target4 = 10;
+		result = Homework1.pairsThatEqualSum(arr4, target4);
+		System.out.println("Test 4-");
+		// checks if the resulting pairs actually add up to the target
+		if(result.size()==0) {
+			System.out.println("No pairs found!");
+		}
+		for(int[] a : result) {
+			System.out.println(a[0] + " + " + a[1] + " = " + target4);
+			assertEquals(a[0] + a[1], target4);
+		}
+		System.out.println("");
+		
+		
+		/*
+		 * 		Test with multiple iterations of numbers
+		 */
+		int[] arr5 = {5, 5};
+		int target5 = 10;
+		result = Homework1.pairsThatEqualSum(arr5, target5);
+		System.out.println("Test 5-");
+		// checks if the resulting pairs actually add up to the target
+		if(result.size()==0) {
+			System.out.println("No pairs found!");
+		}
+		for(int[] a : result) {
+			System.out.println(a[0] + " + " + a[1] + " = " + target5);
+			assertEquals(a[0] + a[1], target5);
+		}
+		System.out.println("");
+		
+		
 		
 		
 	}

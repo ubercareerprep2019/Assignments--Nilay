@@ -14,6 +14,6 @@ Following assumptions made for this program-
 #### `pairsThatEqualSum(int[] inputArray, int targetSum)`
 The function first transfers all the integers from the array to a Hashtable and computes each integers frequency. For a given n, it checks if there exists a number `target-n` (also makes sure for cases where `n = target-n` and there is only 1 occurance of n). If it can find a valid pair, it adds both in a list which is returned. The algorithm should run in O(n) time.
 
-Assumptions made-
+Following assumptions made for this program-
 - The array might contains multiple occurances of the same number.
 - The output list should only consider unique equations (eg- 1 + 2 and 2 + 1 are the same and not unique)

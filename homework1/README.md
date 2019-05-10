@@ -16,4 +16,4 @@ The function first transfers all the integers from the array to a Hashtable and 
 
 Following assumptions made for this program-
 - The array might contains multiple occurances of the same number.
-- The output list should only consider unique equations (eg- 1 + 2 and 2 + 1 are the same and not unique)
+- The output list should only contain unique equations (eg- 1 + 2 and 2 + 1 are the same and not unique)

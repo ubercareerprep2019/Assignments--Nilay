@@ -8,7 +8,7 @@ The function uses 2 HashMaps to store the frequencies from each of the input str
 The function first transfers all the integers from the array to a Hashtable and computes each integers frequency. For a given n, it checks if there exists a number `target-n` (also makes sure for cases where `n = target-n` and there is only 1 occurance of n). If it can find a valid pair, it adds both in a list which is returned. The algorithm should run in `O(n)` time.
 
 ## Part 3- Stacks & Queues
-#### Stack-
+### Stack-
 The Stack is implemented using a generic array. It has a default size of 10 but you can also specify the desired size when initializing your stack.
 The Stack has the following methods-
 - `push(T ele)` - It adds an element to the stack

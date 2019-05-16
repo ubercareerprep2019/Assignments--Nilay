@@ -125,11 +125,58 @@ public class Homework1Test {
 		}
 		System.out.println("");
 		
-		
-		
-		
 	}
 
+	
+	/*
+	 * Basic push, pop, top, isEmpty tests.
+	 */
+	@Test
+	public void testStack1() {
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.push(1);
+		stack.push(10);
+		stack.push(20);
+		
+		assertEquals(stack.top(), Integer.valueOf(20));
+		assertEquals(stack.pop(), Integer.valueOf(20));
+		assertFalse(stack.isEmpty());
+		assertEquals(stack.pop(1), Integer.valueOf(1));
+		assertEquals(stack.top(), Integer.valueOf(10));
+		assertFalse(stack.isEmpty());
+		
+	}
+	
+	
+	/*
+	 * 		Testing initializing the stack with specific values.
+	 * 		Testing pushing more elements to a stack than the specific value during initializing.
+	 * 		Testing pop and top from an empty stack.
+	 * 		Testing pop(T ele) for an element that does not exist.
+	 */
+	@Test
+	public void testStack2() {
+		Stack<Integer> stack = new Stack<Integer>(3);
+		int count = 0;
+		for(int i = 1; i <= 10; i++) {
+			stack.push(i);
+			if(stack.isFull()) {
+				count++;
+			}
+		}
+		// When pushing the first 10 natural numbers on the stack, the size of the stack goes from 3 -> 6 -> 12. 
+		// Hence it has to change its array twice.
+		assertEquals(count, 2);
+		
+		assertEquals(stack.pop(100), null);
+		
+		for(int i = 0; i < 10; i++) {
+			stack.pop();
+		}
+		
+		assertEquals(stack.pop(), null);
+		assertEquals(stack.top(), null);
+	}
 
 
 }

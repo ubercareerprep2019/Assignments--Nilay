@@ -2,7 +2,6 @@ package homework1;
 
 import java.util.*;
 import java.util.stream.IntStream;
-
 import org.w3c.dom.Node;
 
 public class Homework1 {
@@ -179,20 +178,30 @@ public class Homework1 {
  * Part 3: Stacks & Queues
  */
 
-class Stack<T> {
 
-	//private ArrayList<T> stack;
-	private int defSize = 10;
-	
+	/*
+	 * 		The Stack is implemented using a generic array. It has a default size of 10 but you can also specify the desired size when initializing your stack.
+	 * 		The Stack has the following methods-
+	 * 			push(T ele) - It adds an element to the stack
+	 * 			pop()		- It removes the top element from the stack
+	 * 			pop(T ele)	- It removes the specified element from the stack
+	 * 			top() 		- It returns the top element on the stack without removing it
+	 * 			isEmpty()	- It returns a boolean depending on if the stack is empty or not
+	 * 			isFull()	- It returns a boolean depending on if the stack is full or not
+	 */
+
+class Stack<T> {
+	private int defSize = 10;	// default size of the array when initialized
 	private T[] arr;
 	private int top;
 	
-
+	// Constructor for initializing
 	public Stack() {
 		arr = (T[]) new Object[defSize];
 		top = -1;
 	}
 
+	// Constructor for initializing with specific size
 	public Stack(int size) {
 		defSize = size;
 		arr = (T[]) new Object[defSize];
@@ -200,7 +209,7 @@ class Stack<T> {
 	}
 
 	public void push(T element) {
-		
+		// If the array is full, it creates a new one with double the size, copies all elements to it and then pushes the elements which is passed in.
 		if(this.isFull()) {
 			T[] temp = (T[]) new Object[defSize*2];
 			for(int i = 0; i <= top; i++) {
@@ -209,20 +218,39 @@ class Stack<T> {
 			arr = temp;
 			defSize = defSize*2;
 		}
-		
 		arr[++top] = element;
 	}
 
 	public T pop() {
-		if(top == -1) {
+		if(this.isEmpty()) {
 			System.out.println("Error: Stack is empty!");
 			return null;
 		}
-		return arr[top--];
+		T ans = arr[top];
+		arr[top] = null;
+		top--;
+		return ans;
+	} 
+	
+	public T pop(T val) {
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] == val) {
+				T ans = arr[i];
+				for(int j = i; j < arr.length - 1; j++) {
+					arr[j] = arr[j+1];
+				}
+				arr[arr.length-1] = null;
+				top--;
+				return ans;
+			}
+		}
+		System.out.println("The stack does not contain " + val);
+		return null;
 	}
 
 	public T top() {
-		if(top == -1) {
+		if(this.isEmpty()) {
+			System.out.println("Error: Stack is empty!");
 			return null;
 		}
 		return arr[top];

@@ -191,32 +191,32 @@ public class Homework1 {
 	 */
 
 class Stack<T> {
-	private int defSize = 10;	// default size of the array when initialized
+	private int defaultSize = 10;	// default size of the array when initialized
 	private T[] arr;
 	private int top;
 	
 	// Constructor for initializing
 	public Stack() {
-		arr = (T[]) new Object[defSize];
+		arr = (T[]) new Object[defaultSize];
 		top = -1;
 	}
 
 	// Constructor for initializing with specific size
 	public Stack(int size) {
-		defSize = size;
-		arr = (T[]) new Object[defSize];
+		defaultSize = size;
+		arr = (T[]) new Object[defaultSize];
 		top = -1;
 	}
 
 	public void push(T element) {
 		// If the array is full, it creates a new one with double the size, copies all elements to it and then pushes the elements which is passed in.
 		if(this.isFull()) {
-			T[] temp = (T[]) new Object[defSize*2];
+			T[] temp = (T[]) new Object[defaultSize*2];
 			for(int i = 0; i <= top; i++) {
 				temp[i] = arr[i];
 			}
 			arr = temp;
-			defSize = defSize*2;
+			defaultSize = defaultSize*2;
 		}
 		arr[++top] = element;
 	}
@@ -261,7 +261,43 @@ class Stack<T> {
 	}
 	
 	public boolean isFull() {
-		return top >= (defSize-1);
+		return top >= (defaultSize-1);
+	}
+
+}
+
+class Queue<T> {
+
+	private Stack<T> stack;
+	int min;
+
+	public Queue() {
+		stack = new Stack<T>();
+		min = Integer.MAX_VALUE;
+	}
+
+	public void enqueue(T element) {
+		stack.push(element);
+		
+		// Is integer?
+		if(element instanceof Integer) {
+			if ((int) element < min) {
+				min = (int) element;
+			}
+		}
+	}
+
+	public T dequeue() {
+		Stack<T> helper = new Stack<T>();
+		while (!stack.isEmpty()) {
+			helper.push(stack.pop());
+		}
+		stack = helper;
+		return stack.pop();
+	}
+
+	public int min() {
+		return min;
 	}
 
 }

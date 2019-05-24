@@ -148,7 +148,7 @@ public class HW1_Tests {
 	
 	
 	/*
-	 * 		Testing if the stack follows ordering properties
+	 * 		Testing if the stack follows ordering properties.
 	 * 		Testing pop and top from an empty stack.
 	 * 		Testing pop(T ele) for an element that does not exist.
 	 */
@@ -171,6 +171,29 @@ public class HW1_Tests {
 		assertTrue(stack.isEmpty());
 		assertEquals(stack.top(), null);
 		assertEquals(stack.pop(), null);
+	}
+	
+	@Test
+	public void testStack3() {
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.push(30);
+		stack.push(20);
+		stack.push(10);
+		
+		assertEquals(stack.min(), Integer.valueOf(10));
+		assertEquals(stack.top(), Integer.valueOf(10));
+		stack.pop();
+		assertEquals(stack.top(), Integer.valueOf(20));
+		assertEquals(stack.min(), Integer.valueOf(20));
+		
+		stack.push(1);
+		stack.push(50);
+		stack.push(70);
+		
+		assertEquals(stack.min(), Integer.valueOf(1));
+		stack.pop(1);
+		assertEquals(stack.min(), Integer.valueOf(20));
+		
 	}
 	
 	

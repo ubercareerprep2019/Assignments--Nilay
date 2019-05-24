@@ -9,7 +9,7 @@ public class HW1_Part3 {
 	public static void main(String[] args) {
 
 		/*
-		 * Custom test space for the 2 functions.
+		 * Custom test space
 		 */
 
 		Stack<Integer> stack = new Stack<Integer>();
@@ -33,29 +33,31 @@ public class HW1_Part3 {
  */
 
 /*
- * The Stack is implemented using a generic array. It has a default size of 10
- * but you can also specify the desired size when initializing your stack. The
- * Stack has the following methods- push(T ele) - It adds an element to the
- * stack pop() - It removes the top element from the stack pop(T ele) - It
- * removes the specified element from the stack top() - It returns the top
- * element on the stack without removing it isEmpty() - It returns a boolean
- * depending on if the stack is empty or not isFull() - It returns a boolean
- * depending on if the stack is full or not
+ * The Stack is implemented using an ArrayList.
+ * The Stack has the following methods- 
+ * push(T ele) - It adds an element to the stack 
+ * pop() - It removes the top element from the stack 
+ * pop(T ele) - It removes the specified element from the stack 
+ * top() - It returns the top element on the stack without removing it 
+ * isEmpty() - It returns a boolean depending on if the stack is empty or not 
+ * min() - It returns the smallest element from the stack.
+ * 
  */
-// T extends Comparable<T>
+
 class Stack<T extends Comparable<T>> {
 	private ArrayList<T> list;
 	private T min;
 	private int top;
 
-	// Constructor for initializing
+	// Constructor
 	public Stack() {
 		list = new ArrayList<T>();
 		top = -1;
 	}
 
 	public void push(T element) {
-		if (top == -1) {
+		// If the stack is empty, then the first element has to be the smallest element
+		if (this.isEmpty()) {
 			min = element;
 		} else {
 			if (min.compareTo(element) > 0) {
@@ -73,6 +75,12 @@ class Stack<T extends Comparable<T>> {
 		}
 		T ans = list.remove(top);
 		top--;
+		
+		// If popping min, find new min
+		if(ans.equals(min)) {
+			updateMin();	
+		}
+		
 		return ans;
 	}
 
@@ -80,6 +88,12 @@ class Stack<T extends Comparable<T>> {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).equals(val)) {
 				T ans = list.remove(i);
+				
+				// If popping min, find new min
+				if(ans.equals(min)) {
+					updateMin();	
+				}
+				
 				return ans;
 			}
 		}
@@ -100,11 +114,41 @@ class Stack<T extends Comparable<T>> {
 	}
 
 	public T min() {
+		if(list.isEmpty()) {
+			return null;
+		}
 		return min;
+	}
+	
+	// Helper method, 
+	private void updateMin() {
+		if(list.isEmpty()) {
+			min = null;
+			return;
+		}
+		T currMin = list.get(0);
+		for(T ele : list) {
+			if (currMin.compareTo(ele) > 0) {
+				currMin = ele;
+			}
+		}
+		if(!list.contains(min)) {
+			min = currMin;
+		}
 	}
 
 }
 
+
+/*
+ * The Queue is implemented using the Stack we created before.
+ * The Queue has the following methods- 
+ * enqueue(T ele) - It adds an element to the queue 
+ * dequeue() - It removes the first element from the queue 
+ * isEmpty() - It returns a boolean depending on if the queue is empty or not 
+ * min() - It returns the smallest element from the queue.
+ * 
+ */
 class Queue<T extends Comparable<T>> {
 	private Stack<T> stack;
 
@@ -117,9 +161,7 @@ class Queue<T extends Comparable<T>> {
 	}
 
 	public T dequeue() {
-
 		Stack<T> helper = new Stack<T>();
-		
 		while (!stack.isEmpty()) {
 			helper.push(stack.pop());
 		}
@@ -127,7 +169,6 @@ class Queue<T extends Comparable<T>> {
 		while(!helper.isEmpty()) {
 			stack.push(helper.pop());
 		}
-		
 		return ans;
 	}
 

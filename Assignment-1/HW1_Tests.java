@@ -6,39 +6,39 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import homework1.Homework1;
-
+import homework1.HW1_Part2;
+import homework1.HW1_Part3;
 
 import org.junit.Test;
 
-public class Homework1Test {
+public class HW1_Tests {
 
 	@Test
 	public void testStringPermutation1() {
 		// tests for a basic anagram
 		String s1 = "listen";
 		String s2 = "silent";
-		assertTrue(Homework1.isStringPermutation(s1, s2));
+		assertTrue(HW1_Part2.isStringPermutation(s1, s2));
 		
 		// tests with numbers
 		s1 = "nilay1808";
 		s2 = "18nilay08";
-		assertTrue(Homework1.isStringPermutation(s1, s2));
+		assertTrue(HW1_Part2.isStringPermutation(s1, s2));
 		
 		// tests between alphabets and numbers
 		s1 = "2019";
 		s2 = "two";
-		assertFalse(Homework1.isStringPermutation(s1, s2));
+		assertFalse(HW1_Part2.isStringPermutation(s1, s2));
 		
 		// tests compared to null string
 		s1 = "";
 		s2 = "ironman";
-		assertFalse(Homework1.isStringPermutation(s1, s2));
+		assertFalse(HW1_Part2.isStringPermutation(s1, s2));
 		
 		// tests for case sensitive words
 		s1 = "batman";
 		s2 = "BATMAN";
-		assertFalse(Homework1.isStringPermutation(s1, s2));
+		assertFalse(HW1_Part2.isStringPermutation(s1, s2));
 	}
 	
 	@Test
@@ -49,7 +49,7 @@ public class Homework1Test {
 		int[] arr1 = {1, 2, 3, 4, 5};
 		int target1 = 6;
 		
-		ArrayList<int[]> result = Homework1.pairsThatEqualSum(arr1, target1);
+		ArrayList<int[]> result = HW1_Part2.pairsThatEqualSum(arr1, target1);
 		System.out.println("Test 1-");
 		// checks if the resulting pairs actually add up to the target
 		for(int[] a : result) {
@@ -65,7 +65,7 @@ public class Homework1Test {
 		int[] arr2 = {10, -10, 100, -200, 50, 60};
 		int target2 = -210;
 	
-		result = Homework1.pairsThatEqualSum(arr2, target2);
+		result = HW1_Part2.pairsThatEqualSum(arr2, target2);
 		System.out.println("Test 2-");
 		// checks if the resulting pairs actually add up to the target
 		for(int[] a : result) {
@@ -80,7 +80,7 @@ public class Homework1Test {
 		 */
 		int[] arr3 = {2, 2, 3, 6, 5, 6, 7, -3, 9, -5};
 		int target3 = 4;
-		result = Homework1.pairsThatEqualSum(arr3, target3);
+		result = HW1_Part2.pairsThatEqualSum(arr3, target3);
 		System.out.println("Test 3-");
 		// checks if the resulting pairs actually add up to the target
 		for(int[] a : result) {
@@ -95,7 +95,7 @@ public class Homework1Test {
 		 */
 		int[] arr4 = {5};
 		int target4 = 10;
-		result = Homework1.pairsThatEqualSum(arr4, target4);
+		result = HW1_Part2.pairsThatEqualSum(arr4, target4);
 		System.out.println("Test 4-");
 		// checks if the resulting pairs actually add up to the target
 		if(result.size()==0) {
@@ -113,7 +113,7 @@ public class Homework1Test {
 		 */
 		int[] arr5 = {5, 5};
 		int target5 = 10;
-		result = Homework1.pairsThatEqualSum(arr5, target5);
+		result = HW1_Part2.pairsThatEqualSum(arr5, target5);
 		System.out.println("Test 5-");
 		// checks if the resulting pairs actually add up to the target
 		if(result.size()==0) {
@@ -167,15 +167,27 @@ public class Homework1Test {
 		// When pushing the first 10 natural numbers on the stack, the size of the stack goes from 3 -> 6 -> 12. 
 		// Hence it has to change its array twice.
 		assertEquals(count, 2);
-		
 		assertEquals(stack.pop(100), null);
-		
 		for(int i = 0; i < 10; i++) {
 			stack.pop();
 		}
-		
 		assertEquals(stack.pop(), null);
 		assertEquals(stack.top(), null);
+	}
+	
+	
+	
+	public void testQueue1() {
+		Queue<Integer> queue = new Queue<Integer>();
+		queue.enqueue(10);
+		queue.enqueue(20);
+		queue.enqueue(30);
+		
+		assertEquals(queue.dequeue(), Integer.valueOf(30));
+		assertFalse(queue.isEmpty());
+		assertEquals(queue.dequeue(), Integer.valueOf(20));
+		assertEquals(queue.dequeue(), Integer.valueOf(10));
+		assertTrue(queue.isEmpty());
 	}
 
 

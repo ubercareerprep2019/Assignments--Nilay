@@ -17,12 +17,10 @@ public class HW1_Part3 {
 		for (int i = 1; i <= 10; i++) {
 			stack.push(i);
 		}
-		System.out.println(stack.isFull());
 		stack.push(19);
 		stack.push(29);
 		stack.push(39);
 		System.out.println(stack.pop());
-		System.out.println(stack.isFull());
 		stack.pop();
 		System.out.println(stack.top());
 		stack.push(99);
@@ -44,48 +42,28 @@ public class HW1_Part3 {
  * depending on if the stack is empty or not isFull() - It returns a boolean
  * depending on if the stack is full or not
  */
-// T extends Comparable<T> 
-class Stack<T> {
-	private int defaultSize = 10; // default size of the array when initialized
-	private T[] arr;
+// T extends Comparable<T>
+class Stack<T extends Comparable<T>> {
+	private ArrayList<T> list;
 	private T min;
 	private int top;
 
 	// Constructor for initializing
 	public Stack() {
-		arr = (T[]) new Object[defaultSize];
-		top = -1;
-	}
-
-	// Constructor for initializing with specific size
-	public Stack(int size) {
-		defaultSize = size;
-		arr = (T[]) new Object[defaultSize];
+		list = new ArrayList<T>();
 		top = -1;
 	}
 
 	public void push(T element) {
-		// If the array is full, it creates a new one with double the size, copies all
-		// elements to it and then pushes the elements which is passed in.
-		if (this.isFull()) {
-			T[] temp = (T[]) new Object[defaultSize * 2];
-			for (int i = 0; i <= top; i++) {
-				temp[i] = arr[i];
+		if (top == -1) {
+			min = element;
+		} else {
+			if (min.compareTo(element) > 0) {
+				min = element;
 			}
-			arr = temp;
-			defaultSize = defaultSize * 2;
 		}
-
-		// For first element, the min must equal that element
-//		if (top == -1) {
-//			min = element;
-//		} else {
-//			if (min.compareTo(element) > 0) {
-//				min = element;
-//			}
-//		}
-
-		arr[++top] = element;
+		list.add(element);
+		top++;
 	}
 
 	public T pop() {
@@ -93,21 +71,15 @@ class Stack<T> {
 			System.out.println("Error: Stack is empty!");
 			return null;
 		}
-		T ans = arr[top];
-		arr[top] = null;
+		T ans = list.remove(top);
 		top--;
 		return ans;
 	}
 
 	public T pop(T val) {
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == val) {
-				T ans = arr[i];
-				for (int j = i; j < arr.length - 1; j++) {
-					arr[j] = arr[j + 1];
-				}
-				arr[arr.length - 1] = null;
-				top--;
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals(val)) {
+				T ans = list.remove(i);
 				return ans;
 			}
 		}
@@ -120,48 +92,43 @@ class Stack<T> {
 			System.out.println("Error: Stack is empty!");
 			return null;
 		}
-		return arr[top];
+		return list.get(top);
 	}
 
 	public boolean isEmpty() {
 		return top == -1;
 	}
-	
+
 	public T min() {
 		return min;
 	}
 
-	// Helper methods
-	public boolean isFull() {
-		return top >= (defaultSize - 1);
-	}
-
 }
 
-class Queue<T> {
-
+class Queue<T extends Comparable<T>> {
 	private Stack<T> stack;
-	T min;
 
 	public Queue() {
 		stack = new Stack<T>();
 	}
 
-	public Queue(int n) {
-		stack = new Stack<T>(n);
-	}
-
-	public void enqueue(T element) {		
+	public void enqueue(T element) {
 		stack.push(element);
 	}
 
 	public T dequeue() {
+
 		Stack<T> helper = new Stack<T>();
+		
 		while (!stack.isEmpty()) {
 			helper.push(stack.pop());
 		}
-		stack = helper;
-		return stack.pop();
+		T ans = helper.pop();
+		while(!helper.isEmpty()) {
+			stack.push(helper.pop());
+		}
+		
+		return ans;
 	}
 
 	public boolean isEmpty() {
@@ -173,4 +140,3 @@ class Queue<T> {
 	}
 
 }
-

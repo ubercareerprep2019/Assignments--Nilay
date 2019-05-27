@@ -41,7 +41,7 @@ The list had the following methods-
 - `hasCycle()` - Checks if the list is cyclic or not
 - `isPalindrome()` - Checks if the list is a palindrome or not
 
-_Note-_
+Note-
 - The Linked List is indexed from `0`.
 - The Linked List class contains a helper Node class.
 

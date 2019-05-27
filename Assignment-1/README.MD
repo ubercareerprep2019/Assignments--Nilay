@@ -29,7 +29,7 @@ The Queue has the following methods-
 
 ## Part 4: Linked List
 The LinkedList has been implemented using the Node class. It keeps track of the `head` node, `tail` node and size of the list.
-Note- The list is indexed from 0.
+_Note- The list is indexed from `0`._
 The list had the following methods-
 - `print()` - Prints the list
 - `pushBack(T ele)` - Inserts an element to the back of the list

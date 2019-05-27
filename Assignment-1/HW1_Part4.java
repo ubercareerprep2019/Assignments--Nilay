@@ -15,7 +15,6 @@ public class HW1_Part4 {
 		list.pushBack(10);
 		list.pushBack(5);
 		list.insert(2, 100);
-		//list.tail.next = list.head;
 		
 		list.print();
 		System.out.println(list.isPalindrome());
@@ -25,36 +24,69 @@ public class HW1_Part4 {
 	}
 }
 
+/*
+ * 		The LinkedList has been implemented using the Node class.
+ * 		It keeps track of the head node, tail node and size of the list.
+ * 		Note- The list is indexed from 0.
+ * 
+ * 		The list had the following methods-
+ * 		print() - Prints the list
+ * 		pushBack(T ele) - Inserts an element to the back of the list
+ * 		popBack() - Removes the last element from the list
+ * 		insert(int index, T ele) - Inserts the element at the given index. 
+ * 		erase(int index) - Removes the element from the given index
+ * 		elementAt(int index) - Returns the element at given index.
+ * 		size() - Returns the size of the list
+ * 		hasCycle() - Checks if the list is cyclic or not
+ * 		isPalindrome() - Checks if the list is a palindrome or not
+ */
 class LinkedList<T extends Comparable<T>> {
-
-	 Node head;
-	 Node tail;
+	// Class Variables
+	private Node head;
+	private Node tail;
 	private int size;
 
+	// Constructor
 	public LinkedList() {
 		head = new Node(null, tail);
 		tail = head;
 		size = 0;
 	}
 
+	// A function to print the list
 	public void print() {
-		if(hasCycle()) {
-			System.out.println("Cyclic list");
-		}
-		if (size == 0) {
-			System.out.println("Empty");
+		// Error Handler
+		if (size <= 0) {
+			System.out.println("Error: The list is empty!");
 			return;
 		}
-		int i = 0;
-		Node curr = head;
-		while (curr != null && i <= size) {
-			System.out.print(curr.val + " -> ");
-			curr = curr.next;
-			i++;
+		
+		// Cyclic List Handler
+		if(hasCycle()) {
+			System.out.println("Note: The list is a cyclic list");
+			int i = 0;
+			Node curr = head;
+			while (curr != null && i <= size) {
+				System.out.print(curr.val + " -> ");
+				curr = curr.next;
+				i++;
+			}
+			System.out.println("...");
 		}
-		System.out.println();
+		
+		// Normal List Handler
+		else {
+			Node curr = head;
+			String s = "";
+			while (curr != null) {
+				s += curr.val + " -> ";
+				curr = curr.next;
+			}
+			System.out.println(s.substring(0, s.length()-3));
+		}
 	}
-
+	
+	// Adds an element to the back of the list
 	public void pushBack(T ele) {
 		Node newNode = new Node(ele, null);
 		if (size == 0) {
@@ -70,7 +102,14 @@ class LinkedList<T extends Comparable<T>> {
 		size++;
 	}
 
+	// Removes the last element from the list
 	public T popBack() {
+		// Error Handler
+		if (size <= 0) {
+			System.out.println("Error: The list is empty!");
+			return null;
+		}
+		
 		T ans;
 		if (size == 1) {
 			ans = head.val;
@@ -88,19 +127,25 @@ class LinkedList<T extends Comparable<T>> {
 		return ans;
 	}
 
+	// Inserts the given element at the given index
+	// Note: The list is indexed from 0
 	public void insert(int index, T ele) {
+		// Error Handler
 		if (index > size) {
 			System.out.println("Error: Invalid index");
 			return;
 		}
+		// Insert at front
 		else if (index == 0) {
 			Node newNode = new Node(ele, head);
 			head = newNode;
 			size++;
 		} 
+		// Insert at rear
 		else if(index == size) {
 			pushBack(ele);
 		}
+		// Insert in the middle
 		else {
 			Node curr = head;
 			for (int i = 0; i < index - 1; i++) {
@@ -113,17 +158,23 @@ class LinkedList<T extends Comparable<T>> {
 		return;
 	}
 	
+	// Removes the element at a given index from the list without returning it
+	// Note: The list is indexed from 0
 	public void erase(int index) {
+		// Error Handler
 		if (index >= size) {
 			System.out.println("Error: Invalid index");
 			return;
 		}
+		// Remove from front
 		else if (index == 0) {
 			head = head.next;
 		} 
+		// Remove from back
 		else if(index == (size-1)) {
 			popBack();
 		}
+		// Remove from middle
 		else {
 			Node curr = head;
 			for (int i = 0; i < index - 1; i++) {
@@ -135,17 +186,23 @@ class LinkedList<T extends Comparable<T>> {
 		return;
 	}
 	
+	// Returns the element at a given index from the list without removing it
+	// Note: The list is indexed from 0
 	public T elementAt(int index) {
+		// Error Handler
 		if (index >= size) {
 			System.out.println("Error: Invalid index");
 			return null;
 		}
+		// Element in the front
 		else if (index == 0) {
 			return head.val;
 		} 
+		// Element in the rear
 		else if(index == (size-1)) {
 			return tail.val;
 		}
+		// Element in the middle
 		else {
 			Node curr = head;
 			for (int i = 0; i < index - 1; i++) {
@@ -155,16 +212,18 @@ class LinkedList<T extends Comparable<T>> {
 		}
 	}
 	
+	// Returns the size of the list
 	public int size() {
 		return size;
 	}
 	
+	// Checks if the list is cyclic or not
 	public boolean hasCycle() {
-		
+		// Use a set to store all unique nodes
 		HashSet<Node> set = new HashSet<Node>();
-		
 		Node curr = head;
 		while(curr != null) {
+			// If the set contains a node we've already seen, then the list is cyclic
 			if(set.contains(curr)) {
 				return true;
 			}
@@ -176,36 +235,42 @@ class LinkedList<T extends Comparable<T>> {
 		return false;
 	}
 	
+	// Checks if the list is a palindrome or not
 	public boolean isPalindrome() {
+		// Empty list handler
+		if (size <= 0) {
+			return false;
+		}
 		
+		/*
+		 * 		Using a stack and queue to store all the elements of the list.
+		 * 		If the order of elements is the same in the stack and queue, then it is a palindrome
+		 */
 		Stack<T> stack = new Stack<T>();
 		Queue<T> queue = new Queue<T>();
-		
 		Node curr = head;
-		
 		while(curr != null) {
 			stack.push(curr.val);
 			queue.enqueue(curr.val);
 			curr = curr.next;
 		}
-		
 		while(!stack.isEmpty() && !queue.isEmpty()) {
 			if(stack.pop() != queue.dequeue()) {
 				return false;
 			}
 		}
-		
 		if(stack.isEmpty() && queue.isEmpty()) {
 			return true;
 		}
-		
 		return false;
 	}
 
-	class Node {
+	// Helper Node class for the LinkedList
+	private class Node {
 		T val;
 		Node next;
-
+		
+		// Constructor
 		public Node(T value, Node link) {
 			val = value;
 			next = link;

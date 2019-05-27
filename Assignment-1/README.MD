@@ -28,9 +28,11 @@ The Queue has the following methods-
 - `min()`	- It returns the smallest element from the queue without removing it in `O(1)` time.
 
 ## Part 4: Linked List
-The LinkedList has been implemented using the Node class. It keeps track of the `head` node, `tail` node and size of the list.
+The Linked List has been implemented using the Node class. It keeps track of the `head` node, `tail` node and size of the list.
 
-Note- The list is indexed from `0`.
+Note- 
+- The Linked List is indexed from `0`.
+- The Linked List class contains a helper Node class.
 
 The list had the following methods-
 - `print()` - Prints the list

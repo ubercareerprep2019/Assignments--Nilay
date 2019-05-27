@@ -30,10 +30,6 @@ The Queue has the following methods-
 ## Part 4: Linked List
 The Linked List has been implemented using the Node class. It keeps track of the `head` node, `tail` node and size of the list.
 
-Note- 
-- The Linked List is indexed from `0`.
-- The Linked List class contains a helper Node class.
-
 The list had the following methods-
 - `print()` - Prints the list
 - `pushBack(T ele)` - Inserts an element to the back of the list
@@ -44,5 +40,10 @@ The list had the following methods-
 - `size()` - Returns the size of the list
 - `hasCycle()` - Checks if the list is cyclic or not
 - `isPalindrome()` - Checks if the list is a palindrome or not
+
+_Note-_
+- _The Linked List is indexed from `0`._
+- _The Linked List class contains a helper Node class._
+
 
 ## Part 5: Tower of Hanoi

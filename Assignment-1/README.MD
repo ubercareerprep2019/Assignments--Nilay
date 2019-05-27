@@ -28,5 +28,17 @@ The Queue has the following methods-
 - `min()`	- It returns the smallest element from the queue without removing it in `O(1)` time.
 
 ## Part 4: Linked List
+The LinkedList has been implemented using the Node class. It keeps track of the `head` node, `tail` node and size of the list.
+Note- The list is indexed from 0.
+The list had the following methods-
+- `print()` - Prints the list
+- `pushBack(T ele)` - Inserts an element to the back of the list
+- `popBack()` - Removes the last element from the list
+- `insert(int index, T ele)` - Inserts the element at the given index. 
+- `erase(int index)` - Removes the element from the given index
+- `elementAt(int index)` - Returns the element at given index.
+- `size()` - Returns the size of the list
+- `hasCycle()` - Checks if the list is cyclic or not
+- `isPalindrome()` - Checks if the list is a palindrome or not
 
 ## Part 5: Tower of Hanoi

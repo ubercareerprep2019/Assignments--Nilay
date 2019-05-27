@@ -42,8 +42,8 @@ The list had the following methods-
 - `isPalindrome()` - Checks if the list is a palindrome or not
 
 _Note-_
-- _The Linked List is indexed from `0`._
-- _The Linked List class contains a helper Node class._
+- The Linked List is indexed from `0`.
+- The Linked List class contains a helper Node class.
 
 
 ## Part 5: Tower of Hanoi

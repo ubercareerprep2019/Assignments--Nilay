@@ -121,7 +121,7 @@ class Stack<T extends Comparable<T>> {
 				if (ans.equals(min)) {
 					updateMin();
 				}
-
+				
 				return ans;
 			}
 		}
@@ -176,6 +176,27 @@ class Stack<T extends Comparable<T>> {
 			min = currMin;
 		}
 	}
+	
+	/*
+	 *   Helper Methods
+	 */
+	
+	private ArrayList<T> asList() {
+		ArrayList<T> ans = new ArrayList<T>();
+		for(int i = top; i >= 0; i--) {
+			ans.add(list.get(i));
+		}
+		return ans;
+	}
+	
+	public int size() {
+		return list.size();
+	}
+	
+	public boolean contains(T i) {
+		return list.contains(i);
+	}
+	
 
 }
 

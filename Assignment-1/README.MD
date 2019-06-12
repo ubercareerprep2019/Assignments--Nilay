@@ -1,16 +1,16 @@
-# Homework 1
+# Assignment 1
 
 ## Part 2: Arrays & Strings
 ##### `isStringPermutation(String s1, String s2)`
-The function uses 2 HashMaps to store the frequencies from each of the input strings and a HashSet to store all the unique characters (needed to interate over the 2 HashMaps in the end). The function basically calculates the frequency of each unique character from the strings and then returns true only if the frequencies match for every character. The runtime for this function should be `O(n)`.
+The function uses 2 HashMaps to store the frequencies from each of the input strings and a HashSet to store all the unique characters (needed to iterate over the 2 HashMaps in the end). The function basically calculates the frequency of each unique character from the strings and then returns true only if the frequencies match for every character. The runtime for this function should be `O(n)`.
 
 ##### `pairsThatEqualSum(int[] arr, int target)`
-The function first transfers all the integers from the array to a Hashtable and computes each integers frequency. For a given `n`, it checks if there exists a number `target-n` (also makes sure for cases where `n = target-n` and there is only 1 occurance of `n`). If it can find a valid pair, it adds both in a list which is returned. The algorithm should run in `O(n)` time.
+The function first transfers all the integers from the array to a Hashtable and computes each integers frequency. For a given `n`, it checks if there exists a number `target-n` (also makes sure for cases where `n = target-n` and there is only 1 occurrence of `n`). If it can find a valid pair, it adds both in a list which is returned. The algorithm should run in `O(n)` time.
 
 
 ## Part 3: Stacks & Queues
 ### Stack-
-The Stack is implemented using an ArrayList. It keeps track of the index of the element on the top of the stack and also keeps track of the min element on the stack. The top index is updated every time an element is pushed or popped. The min is updated every time an element smaller than it is pushed and everytime it is popped.
+The Stack is implemented using an ArrayList. It keeps track of the index of the element on the top of the stack and also keeps track of the smallest element on the stack. The top index is updated every time an element is pushed or popped. The smallest element is updated every time an element smaller than it is pushed and every time it is popped.
 The Stack has the following methods-
 - `push(T element)` - It adds an element to the top stack
 - `pop()`	- It removes the top element from the stack
@@ -65,4 +65,4 @@ The class as the following methods-
 
 
 ## Tests
-The folder also contains a test suite (`/HW1_Tests.java`) for all the 5 parts of this assiginment. The test suite contains JUnit tests for all the functions and I have tried my best to test all edge cases.
+The folder also contains a test suite (`/HW1_Tests.java`) for all the 5 parts of this assignment. The test suite contains JUnit tests for all the functions and I have tried my best to test all edge cases.

@@ -45,7 +45,7 @@ The Linked List had the following methods-
 
 
 ## Part 5: Tower of Hanoi
-The game uses 3 Rods from the Rod Class [(_made in the file_)](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-1/README.MD#rod-class). When the game is initialized, the number of disks needs to be passed in. The file also contains a game player, and anyone can play the game in the terminal by running the program.
+The game uses 3 Rods from the [Rod Class](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-1/README.MD#rod-class). When the game is initialized, the number of disks needs to be passed in. The file also contains a game player, and anyone can play the game in the terminal by running the program.
 
 Methods-
 - `moveDisk(int startRod, int destRod)` - Moves the top most disk from startRod to destRod
@@ -56,7 +56,8 @@ Methods-
 - `makeGame()` - Generates a random game board.
 
 ### Rod class
-The Rod class is basically a stack with additional functions for the game. It follows all the rules of Tower of Hanoi and is implemented using the stack created in Part 3.
+The Rod class is implemented using the stack created in Part 3. It is very similar to a normal stack but has some added functionality for ease and follows all the rules of Tower of Hanoi.
+
 Methods-
 - `push(int i)` - returns `true` if the move was valid and was executed else returns `false`.
 - `pop()` - return the top element from the rod, `-1` if the rod is empty

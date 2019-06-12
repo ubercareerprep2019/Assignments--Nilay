@@ -7,73 +7,79 @@ import org.w3c.dom.Node;
 public class HW1_Part5 {
 
 	public static void main(String[] args) {
-
-		TowerOfHanoi game = new TowerOfHanoi(8);
+		/*
+		 * 		Game Player: You can play the game in the terminal by running this program
+		 */
+		System.out.println("Hello, welcome to Tower of Hanoi!\n");
 		
+		// Get number of disks you want to play with
+		System.out.print("Please enter the number of disks you want to play with- ");
+		Scanner num = new Scanner(System.in);
+		int numOfDisks = num.nextInt();
+		System.out.println("Let's get started!");
+		
+		// Initialize the game
+		TowerOfHanoi game = new TowerOfHanoi(numOfDisks);
 		game.makeGame();
-		
+		int moves = 0;
 		game.print();
 		
-//		game.r1.push(3);
-//		game.r1.push(2);
-//		game.r1.push(1);
-//		
-//		game.r2.push(5);
-//		
-//		game.r3.push(4);
-//		
-//		game.print();
-//		
-//		game.moveDisk(3, 2);
-//		game.print();
-//		System.out.println(game.winChecker());
-//
-//		game.moveDisk(1, 2);
-//		game.print();
-//		System.out.println(game.winChecker());
-//
-//		game.moveDisk(1, 3);
-//		game.print();
-//		System.out.println(game.winChecker());
-//		
-//		game.moveDisk(2, 3);
-//		game.print();
-//		System.out.println(game.winChecker());
-//		
-//		game.moveDisk(1, 2);
-//		game.print();
-//		System.out.println(game.winChecker());
-//		
-//		game.moveDisk(3, 1);
-//		game.print();
-//		System.out.println(game.winChecker());
-//
-//		game.moveDisk(3, 2);
-//		game.print();
-//		System.out.println(game.winChecker());
-//
-//		game.moveDisk(1, 2);
-//		game.print();
-//		System.out.println(game.winChecker());
-
-
-		
+		while(!game.win()) {
+			System.out.println("What move do you want to play?");
+			
+			// Get Start Rod
+			System.out.print("Start rod (1, 2, 3): ");
+			int start = num.nextInt();
+			if(start < 1 || start > 3) {
+				// Error catcher
+				System.out.println("Invalid Rod. Try again");
+				continue;
+			}
+			
+			// Get Destination Rod
+			System.out.print("And destination rod (1, 2, 3): ");
+			int dest = num.nextInt();
+			if(dest < 1 || dest > 3) {
+				// Error catcher
+				System.out.println("Invalid Rod. Try again");
+				continue;
+			}
+			
+			// Play Move
+			game.moveDisk(start, dest);
+			game.print();
+			moves++;
+		}
+		num.close();
+		// Print ending details
+		System.out.println("Congratulations! You win!");
+		System.out.println("You took " + moves + " moves.");
+		System.out.println("Thanks for playing!!");
 	}
-
 }
 
+/*
+ * 	The game uses 3 Rods which are basically modified stacks. When the game is initialized, the number of disks needs to be passed in.
+ * 	Functions-
+ * 		moveDisk(int startRod, int destRod)- Moves the top most disk from startRod to destRod
+ * 		disksAtRod(int rod)- Returns a list of disk at given rod. List is from top to bottom
+ * 		print()- A simple print function that prints the game board
+ * 		win()- Checks if there is a win situation on the board
+ * 		isValidRod(int r)- Checks if the input rod is valid or not
+ * 		makeGame()- Generates a random game board.
+ */
 class TowerOfHanoi {
 
-	Rod r1, r2, r3;
-	int numOfDisks;
+	private Rod r1, r2, r3;
+	private int numOfDisks;
 	
+	// Constructor
 	public TowerOfHanoi(int n) {
 		r1 = new Rod();
 		r2 = new Rod();
 		r3 = new Rod();
 		numOfDisks = n;
 	}
-	
 	
 	public void moveDisk(int startRod, int destRod) {
 		
@@ -83,12 +89,12 @@ class TowerOfHanoi {
 			return;
 		}
 		
+		// No move needed
 		if(startRod == destRod) {
 			return;
 		}
 		
 		int disk;
-		
 		// Get the top disk which needs to be moved
 		if(startRod == 1) {
 			disk = r1.pop();
@@ -107,7 +113,6 @@ class TowerOfHanoi {
 		}
 		
 		Boolean success;
-		
 		// Push the disk on the destination rod
 		if(destRod == 1) {
 			success = r1.push(disk);
@@ -138,7 +143,6 @@ class TowerOfHanoi {
 	}
 	
 	public List<Integer> disksAtRod(int rod) {
-		
 		switch(rod) {
 		case 1:
 			return r1.toList();
@@ -147,14 +151,15 @@ class TowerOfHanoi {
 		case 3:
 			return r3.toList();
 		default:
+			// Error Handler
 			System.out.println("Error: Given rod doesn't exist.\n");
 			return null;
 		}
 		
 	}
-	
-	
+		
 	public void print() {
+		// Gets the 3 rods as lists
 		List<Integer> rod1 = disksAtRod(1);
 		List<Integer> rod2 = disksAtRod(2);
 		List<Integer> rod3 = disksAtRod(3);
@@ -162,43 +167,42 @@ class TowerOfHanoi {
 		Stack<String> printStack = new Stack<String>();
 		
 		for(int i = 0; i < numOfDisks; i++) {
-			
 			String d1, d2, d3;
-			
+			// Rod 1 element
 			if(rod1.isEmpty()) {
 				d1 = " ";
 			}
 			else {
 				d1 = rod1.remove(rod1.size()-1).toString();
 			}
-			
+			// Rod 2 element
 			if(rod2.isEmpty()) {
 				d2 = " ";
 			}
 			else {
 				d2 = rod2.remove(rod2.size()-1).toString();
 			}
-			
+			// Rod 3 element
 			if(rod3.isEmpty()) {
 				d3 = " ";
 			}
 			else {
 				d3 = rod3.remove(rod3.size()-1).toString();
 			}
-			
+			// Create final line
 			String line = " | " + d1 + " | " + d2 + " | " + d3 + " | ";
-			
 			printStack.push(line);
 		}
 		
+		// Execute the printStack
 		while(!printStack.isEmpty()) {
 			System.out.println(printStack.pop());
 		}
+		// Leave an empty line at the end
 		System.out.println();
 	}
 	
-	
-	public boolean winChecker() {
+	public boolean win() {
 		if(r1.isEmpty() && r2.isEmpty()) {
 			return r3.size() == numOfDisks;
 		}
@@ -215,18 +219,14 @@ class TowerOfHanoi {
 	/*
 	 * 	Helper Functions
 	 */
-	
 	private boolean isValidRod(int r) {
 		return (r == 1 || r == 2 || r == 3);
 	}
 	
-	
 	public void makeGame() {
 		int n = numOfDisks;
-		
 		for(int i = n; i > 0; i--) {
 			int r = (int) (Math.random()*3) + 1;
-			
 			if(r == 1) {
 				r1.push(i);
 			}
@@ -236,16 +236,22 @@ class TowerOfHanoi {
 			else{
 				r3.push(i);
 			}
-			
 		}
 		return;
 	}
 
 }
 
-
-
-
+/*
+ *   The Rod class is basically a stack with additional functions for the game. It is implemented using the stack created in Part 3.
+ *   Methods-
+ *   	push(int i)- returns true if the move was valid and was executed else returns false.
+ *   	pop()- return the top element from the rod, -1 if the rod is empty
+ *   	toList()- returns a copy of the stack as a iterable list. List is top to bottom.
+ *   	contains(int i)- Checks if the input is contained in the rod.
+ *   	isEmpty()- Checks if the rod is empty.
+ *   	size()- Returns the number of elements in the rod.
+ */
 class Rod {
 	
 	private Stack<Integer> s;
@@ -275,7 +281,6 @@ class Rod {
 	// List is top to bottom
 	public List<Integer> toList() {
 		List<Integer> list = new ArrayList<Integer>();
-		
 		Stack<Integer> helper = new Stack<Integer>();
 		
 		while(!s.isEmpty()) {
@@ -305,5 +310,4 @@ class Rod {
 	public int size() {
 		return s.size();
 	}
-
 }

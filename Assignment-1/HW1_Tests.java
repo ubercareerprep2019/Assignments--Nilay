@@ -236,6 +236,56 @@ public class HW1_Tests {
 		
 		System.out.println(queue.min());
 	}
+	
+	@Test
+	public void testLinkedList1() {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		
+		assertEquals(list.size(), 0);
+		
+		list.pushBack(5);
+		list.pushBack(10);
+		list.pushBack(15);
+		list.pushBack(20);
+		
+		assertEquals(list.size(), 4);
+		assertEquals(list.popBack(), Integer.valueOf(20));
+	}
 
+	@Test
+	public void testLinkedList2() {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		list.pushBack(5);
+		list.pushBack(10);
+		list.pushBack(15);
+		list.pushBack(20);
+		
+		assertEquals(list.elementAt(0), Integer.valueOf(5));
+		
+		list.erase(1);
+		list.insert(1, 100);
+		list.popBack();
+		list.popBack();
+		
+		assertEquals(list.popBack(), Integer.valueOf(100));
+	}
 
+	@Test
+	public void testLinkedList3() {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		
+		list.pushBack(5);
+		list.pushBack(10);
+		list.pushBack(15);
+		list.pushBack(10);
+		list.pushBack(5);
+		
+		assertTrue(list.isPalindrome());
+		
+		list.popBack();
+		
+		assertFalse(list.isPalindrome());
+	}
+	
+	
 }

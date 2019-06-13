@@ -264,6 +264,15 @@ class LinkedList<T extends Comparable<T>> {
 		}
 		return false;
 	}
+	
+	// Makes the list cyclic by linking the head and tail
+	public boolean makeCyclic() {
+		if(this.size() > 1) {
+			tail.next = head;
+			return true;
+		}
+		return false;
+	}
 
 	// Helper Node class for the LinkedList
 	private class Node {

@@ -8,7 +8,7 @@ public class HW1_Part5 {
 
 	public static void main(String[] args) {
 		/*
-		 * 		Game Player: You can play the game in the terminal by running this program
+		 * 	Game Player: You can play the game in the terminal by running this program
 		 */
 		System.out.println("Hello, welcome to Tower of Hanoi!\n");
 		

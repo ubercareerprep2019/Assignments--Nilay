@@ -146,7 +146,7 @@ public class HW1_Tests {
 		}
 		System.out.println("");
 	}
-	
+
 	/*
 	 * Basic push, pop, top, isEmpty tests.
 	 */
@@ -226,28 +226,28 @@ public class HW1_Tests {
 		assertEquals(queue.dequeue(), Integer.valueOf(30));
 		assertTrue(queue.isEmpty());
 	}
-	
+
 	@Test
 	public void testQueue2() {
 		Queue<String> queue = new Queue<String>();
 		queue.enqueue("abcd");
 		queue.enqueue("acde");
 		queue.enqueue("aabr");
-		
+
 		System.out.println(queue.min());
 	}
-	
+
 	@Test
 	public void testLinkedList1() {
 		LinkedList<Integer> list = new LinkedList<Integer>();
-		
+
 		assertEquals(list.size(), 0);
-		
+
 		list.pushBack(5);
 		list.pushBack(10);
 		list.pushBack(15);
 		list.pushBack(20);
-		
+
 		assertEquals(list.size(), 4);
 		assertEquals(list.popBack(), Integer.valueOf(20));
 	}
@@ -259,33 +259,56 @@ public class HW1_Tests {
 		list.pushBack(10);
 		list.pushBack(15);
 		list.pushBack(20);
-		
+
 		assertEquals(list.elementAt(0), Integer.valueOf(5));
-		
+
 		list.erase(1);
 		list.insert(1, 100);
 		list.popBack();
 		list.popBack();
-		
+
 		assertEquals(list.popBack(), Integer.valueOf(100));
 	}
 
 	@Test
 	public void testLinkedList3() {
 		LinkedList<Integer> list = new LinkedList<Integer>();
-		
+
 		list.pushBack(5);
 		list.pushBack(10);
 		list.pushBack(15);
 		list.pushBack(10);
 		list.pushBack(5);
-		
+
 		assertTrue(list.isPalindrome());
+
+		list.popBack();
+
+		assertFalse(list.isPalindrome());
+	}
+
+	@Test
+	public void testLinkedList4() {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+
+		list.pushBack(5);
+		list.pushBack(10);
+		list.pushBack(15);
+		list.pushBack(20);
+		
+		list.makeCyclic();
+		
+		assertTrue(list.hasCycle());
 		
 		list.popBack();
 		
-		assertFalse(list.isPalindrome());
+		assertFalse(list.hasCycle());
+		
+		list.popBack();
+		list.popBack();
+		
+		list.makeCyclic();
+		
+		assertFalse(list.hasCycle());
 	}
-	
-	
 }

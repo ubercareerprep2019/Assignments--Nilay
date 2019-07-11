@@ -25,3 +25,15 @@
 ### Ex 5: Implement a phone book
 
 ### Ex 6: Unsorted lists v.s. Binary search trees
+
+## Graphs
+
+### Ex 1: Implement a graph using adjacency list
+
+### Ex 2: DFS Traversal
+
+### Ex 3: BFS Traversal
+
+### Ex 4: Minimum number of edges between two nodes of a Graph
+
+### Ex 5: Number of islands

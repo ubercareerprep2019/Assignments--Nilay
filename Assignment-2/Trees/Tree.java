@@ -1,10 +1,6 @@
 package homework2.Trees;
 
-import java.util.*;
-import java.util.stream.IntStream;
-import org.w3c.dom.Node;
-
-public class Trees_Ex1 {
+public class Tree {
 
 	public static void main(String[] args) {
 		TreeNode leftChild = new TreeNode(6, null, null);
@@ -14,13 +10,34 @@ public class Trees_Ex1 {
 		TreeNode root = new TreeNode(1, left, right);
 		Tree tree = new Tree(root);
 
-		print(root, 1);
+		tree.print();
+		tree.print(2);
+		tree.print(3);
+	}
+	
+	/*
+	 * 	Class methods and variables
+	 */
+
+	// Variables
+	public TreeNode root;
+
+	// Constructor
+	public Tree(TreeNode root) {
+		this.root = root;
+	}
+	
+	public void print() {
+		print(this.root, 1);
+		System.out.println();
+	}
+	
+	public void print(int num) {
+		print(this.root, num);
+		System.out.println();
 	}
 
-	/*
-	 *  Ex 1
-	 */
-	public static void print(TreeNode root, int t) {
+	private void print(TreeNode root, int t) {
 		TreeNode curr = root;
 		if (curr == null) {
 			return;
@@ -63,15 +80,5 @@ class TreeNode {
 		this.data = data;
 		this.left = left;
 		this.right = right;
-	}
-}
-
-class Tree {
-	// Variables
-	public TreeNode root;
-
-	// Constructor
-	public Tree(TreeNode root) {
-		this.root = root;
 	}
 }

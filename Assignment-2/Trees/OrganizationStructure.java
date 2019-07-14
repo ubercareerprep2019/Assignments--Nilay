@@ -40,7 +40,7 @@ public class OrganizationStructure {
 	 * Class Methods
 	 */
 
-	// Global variables
+	// Variables
 	public Employee ceo;
 
 	// Constructor

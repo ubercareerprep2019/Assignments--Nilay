@@ -13,6 +13,7 @@ public class Tree {
 		tree.print();
 		tree.print(2);
 		tree.print(3);
+		
 	}
 	
 	/*
@@ -20,11 +21,16 @@ public class Tree {
 	 */
 
 	// Variables
-	public TreeNode root;
+	protected TreeNode root;
 
 	// Constructor
 	public Tree(TreeNode root) {
 		this.root = root;
+	}
+	
+	// Constructor
+	public Tree() {
+		this.root = null;
 	}
 	
 	public void print() {
@@ -46,12 +52,12 @@ public class Tree {
 		// Inorder Traversal
 		case 1:
 			print(root.left, t);
-			System.out.println(root.data);
+			System.out.print(root.data + " ");
 			print(root.right, t);
 			break;
 		// Preorder Traversal
 		case 2:
-			System.out.println(root.data);
+			System.out.print(root.data + " ");
 			print(root.left, t);
 			print(root.right, t);
 			break;
@@ -59,7 +65,7 @@ public class Tree {
 		case 3:
 			print(root.left, t);
 			print(root.right, t);
-			System.out.println(root.data);
+			System.out.print(root.data + " ");
 			break;
 		}
 	}
@@ -81,4 +87,25 @@ class TreeNode {
 		this.left = left;
 		this.right = right;
 	}
+	
+	// Constructor
+	public TreeNode(int data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
 }
+
+/*
+ *
+ * class Node<T extends BookEntry> {
+	public T value;
+	public Node<T> left, right;
+
+	public Node(T val) {
+		value = val;
+		left = null;
+		right = null;
+	}
+}
+ */

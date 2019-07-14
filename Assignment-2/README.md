@@ -30,6 +30,9 @@
 
 ### Ex 6: Unsorted lists v.s. Binary search trees
 
+### Tree Tests
+The file `/Trees/Tree_Tests.java` contains extensive JUnit tests for all the exercises.
+
 ## Graphs
 
 ### Ex 1: Implement a graph using adjacency list

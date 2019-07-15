@@ -45,7 +45,7 @@ The tree is a generic Binary Search Tree that is implemented using the `Tree` cl
   - It uses an `Binary Search Tree` to implement the `PhoneBook` interface.
   - **Note:** The Binary search tree used is the same from Ex. 4
 
-**Note:** Both the implementations are done using the [`BookEntry`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BookEntry.java) object to store each entry. `BookEntry` extends the `Pair` class and similarly consists of a key and a value. However, it has its own `compareTo(BookEntry e)` method which compares to `BookEntry` objects solely on their keys. The reason for this was to make it easier to find the value from its corresponding key in the Binary Search Tree. It is located in [`/Trees/BookEntry.java`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BookEntry.java).
+**Note:** Both the implementations are done using the [`BookEntry`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BookEntry.java) object I created to store each entry. `BookEntry` extends the `Pair` class and similarly consists of a key and a value. However, it has its own `compareTo(BookEntry e)` method which compares to `BookEntry` objects solely on their keys. The reason for this was to make it easier to find the value from its corresponding key in the Binary Search Tree. It is located in [`/Trees/BookEntry.java`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BookEntry.java).
 
 ### Ex 6: Unsorted lists v.s. Binary search trees
 

@@ -32,7 +32,6 @@ public class OrganizationStructure {
 		OrganizationStructure comp1 = new OrganizationStructure(e1);
 
 		comp1.printLevelByLevel();
-
 		comp1.printNumLevels();
 	}
 

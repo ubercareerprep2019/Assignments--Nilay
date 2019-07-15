@@ -1,19 +1,18 @@
 package homework2.Trees;
 
-public class Tree {
+public class Tree<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
-		TreeNode leftChild = new TreeNode(6, null, null);
-		TreeNode rightChild = new TreeNode(3, null, null);
-		TreeNode left = new TreeNode(7, null, null);
-		TreeNode right = new TreeNode(17, leftChild, rightChild);
-		TreeNode root = new TreeNode(1, left, right);
-		Tree tree = new Tree(root);
+		TreeNode<Integer> leftChild = new TreeNode<Integer>(6, null, null);
+		TreeNode<Integer> rightChild = new TreeNode<Integer>(3, null, null);
+		TreeNode<Integer> left = new TreeNode<Integer>(7, null, null);
+		TreeNode<Integer> right = new TreeNode<Integer>(17, leftChild, rightChild);
+		TreeNode<Integer> root = new TreeNode<Integer>(1, left, right);
+		Tree<Integer> tree = new Tree<Integer>(root);
 
 		tree.print();
 		tree.print(2);
 		tree.print(3);
-		
 	}
 	
 	/*
@@ -21,10 +20,10 @@ public class Tree {
 	 */
 
 	// Variables
-	protected TreeNode root;
+	protected TreeNode<T> root;
 
 	// Constructor
-	public Tree(TreeNode root) {
+	public Tree(TreeNode<T> root) {
 		this.root = root;
 	}
 	
@@ -33,18 +32,20 @@ public class Tree {
 		this.root = null;
 	}
 	
+	// Default print
 	public void print() {
 		print(this.root, 1);
 		System.out.println();
 	}
 	
+	// Print method with traversal selector
 	public void print(int num) {
 		print(this.root, num);
 		System.out.println();
 	}
 
-	private void print(TreeNode root, int t) {
-		TreeNode curr = root;
+	private void print(TreeNode<T> root, int t) {
+		TreeNode<T> curr = root;
 		if (curr == null) {
 			return;
 		}
@@ -52,12 +53,12 @@ public class Tree {
 		// Inorder Traversal
 		case 1:
 			print(root.left, t);
-			System.out.print(root.data + " ");
+			System.out.print(root.data.toString() + " ");
 			print(root.right, t);
 			break;
 		// Preorder Traversal
 		case 2:
-			System.out.print(root.data + " ");
+			System.out.print(root.data.toString() + " ");
 			print(root.left, t);
 			print(root.right, t);
 			break;
@@ -65,7 +66,7 @@ public class Tree {
 		case 3:
 			print(root.left, t);
 			print(root.right, t);
-			System.out.print(root.data + " ");
+			System.out.print(root.data.toString() + " ");
 			break;
 		}
 	}
@@ -75,37 +76,23 @@ public class Tree {
 /*
  * Given Starter Code
  */
-class TreeNode {
+class TreeNode<T extends Comparable<T>> {
 	// Global Variables
-	public int data;
-	public TreeNode left;
-	public TreeNode right;
+	public T data;
+	public TreeNode<T> left;
+	public TreeNode<T> right;
 
 	// Constructor
-	public TreeNode(int data, TreeNode left, TreeNode right) {
+	public TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
 		this.data = data;
 		this.left = left;
 		this.right = right;
 	}
 	
 	// Constructor
-	public TreeNode(int data) {
+	public TreeNode(T data) {
 		this.data = data;
 		this.left = null;
 		this.right = null;
 	}
 }
-
-/*
- *
- * class Node<T extends BookEntry> {
-	public T value;
-	public Node<T> left, right;
-
-	public Node(T val) {
-		value = val;
-		left = null;
-		right = null;
-	}
-}
- */

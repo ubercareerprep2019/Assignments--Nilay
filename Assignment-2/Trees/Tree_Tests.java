@@ -14,12 +14,12 @@ public class Tree_Tests {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
 
-		TreeNode leftChild = new TreeNode(6, null, null);
-		TreeNode rightChild = new TreeNode(3, null, null);
-		TreeNode left = new TreeNode(7, null, null);
-		TreeNode right = new TreeNode(17, leftChild, rightChild);
-		TreeNode root = new TreeNode(1, left, right);
-		Tree tree = new Tree(root);
+		TreeNode<Integer> leftChild = new TreeNode<Integer>(6, null, null);
+		TreeNode<Integer> rightChild = new TreeNode<Integer>(3, null, null);
+		TreeNode<Integer> left = new TreeNode<Integer>(7, null, null);
+		TreeNode<Integer> right = new TreeNode<Integer>(17, leftChild, rightChild);
+		TreeNode<Integer> root = new TreeNode<Integer>(1, left, right);
+		Tree<Integer> tree = new Tree<Integer>(root);
 
 		tree.print();
 
@@ -32,12 +32,12 @@ public class Tree_Tests {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
 
-		TreeNode leftChild = new TreeNode(6, null, null);
-		TreeNode rightChild = new TreeNode(3, null, null);
-		TreeNode left = new TreeNode(7, null, null);
-		TreeNode right = new TreeNode(17, leftChild, rightChild);
-		TreeNode root = new TreeNode(1, left, right);
-		Tree tree = new Tree(root);
+		TreeNode<Integer> leftChild = new TreeNode<Integer>(6, null, null);
+		TreeNode<Integer> rightChild = new TreeNode<Integer>(3, null, null);
+		TreeNode<Integer> left = new TreeNode<Integer>(7, null, null);
+		TreeNode<Integer> right = new TreeNode<Integer>(17, leftChild, rightChild);
+		TreeNode<Integer> root = new TreeNode<Integer>(1, left, right);
+		Tree<Integer> tree = new Tree<Integer>(root);
 
 		tree.print(2);
 
@@ -50,12 +50,12 @@ public class Tree_Tests {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
 
-		TreeNode leftChild = new TreeNode(6, null, null);
-		TreeNode rightChild = new TreeNode(3, null, null);
-		TreeNode left = new TreeNode(7, null, null);
-		TreeNode right = new TreeNode(17, leftChild, rightChild);
-		TreeNode root = new TreeNode(1, left, right);
-		Tree tree = new Tree(root);
+		TreeNode<Integer> leftChild = new TreeNode<Integer>(6, null, null);
+		TreeNode<Integer> rightChild = new TreeNode<Integer>(3, null, null);
+		TreeNode<Integer> left = new TreeNode<Integer>(7, null, null);
+		TreeNode<Integer> right = new TreeNode<Integer>(17, leftChild, rightChild);
+		TreeNode<Integer> root = new TreeNode<Integer>(1, left, right);
+		Tree<Integer> tree = new Tree<Integer>(root);
 
 		tree.print(3);
 

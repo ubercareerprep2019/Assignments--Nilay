@@ -18,7 +18,7 @@
 
 #### Trees Ex 6: [Unsorted lists v.s. Binary search trees](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/List_vs_BST.java)
 
-###### ----------------------------------------------------------------------------------------------------------------------------------------
+###### -----------------------------------------------------------------------------------------------------------------------
 
 
 #### Graphs Ex 1: [Implement a graph using adjacency list](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)

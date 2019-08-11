@@ -2,7 +2,7 @@
 
 ## Organization
 - I decided to split the assignment into 2 sections, `Trees` and `Graphs`. The code for all the Tree related problems can be found in [`/Trees/`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees) and the code for all the Graph related problems can be found in [`/Graphs/`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs).
-- Each folder also contains an `Assets` folder which basically contains the classes and files given for this project. **Example:** `Employee.java`, `data.csv`, and so on.
+- Each folder also contains an `Assets` folder which basically contains the classes and files given in the documentaion for this project. **Example:** `Employee.java`, `data.csv`, and so on.
 - I have tried my best to refactor maximum amounts of code to make the project size smaller and easier to work with. This can be seen especially in the Tree part. For instance, the `BSTPhoneBook	` uses the `BinarySearchTree` class as the underlying data structure and the `BinarySearchTree` extends the `Tree` class.
 
 ## Tests

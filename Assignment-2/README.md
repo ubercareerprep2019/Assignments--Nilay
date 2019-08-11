@@ -10,19 +10,18 @@
 - All the individual tests are located in [`/Tests/`](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Tests). These tests extensively check for the edge cases and also efficiency for the solutions to each of the problems.
 
 ## Quick Links
-#### Trees Ex 1: [Printing a tree](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/Tree.java)
-#### Trees Ex 2: [Printing a tree level by level](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/OrganizationStructure.java)
-#### Trees Ex 3: [Printing the number of levels](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/OrganizationStructure.java)
-#### Trees Ex 4: [Implement a binary search tree](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BinarySearchTree.java)
-#### Trees Ex 5: [BST phone book](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BSTPhoneBook.java) |  [List phone book](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/ListPhoneBook.java)
+### [Trees:](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/)
+#### Ex 1: [Printing a tree](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/Tree.java)
+#### Ex 2: [Printing a tree level by level](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/OrganizationStructure.java)
+#### Ex 3: [Printing the number of levels](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/OrganizationStructure.java)
+#### Ex 4: [Implement a binary search tree](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BinarySearchTree.java)
+#### Ex 5: [BST phone book](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/BSTPhoneBook.java) |  [List phone book](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/ListPhoneBook.java)
+#### Ex 6: [Unsorted lists v.s. Binary search trees](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/List_vs_BST.java)
 
-#### Trees Ex 6: [Unsorted lists v.s. Binary search trees](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Trees/List_vs_BST.java)
+### [Graphs:](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/)
 
-###### ----------------------------------------------------------------------------------------------------------------------------------------
-
-
-#### Graphs Ex 1: [Implement a graph using adjacency list](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
-#### Graphs Ex 2: [DFS Traversal](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
-#### Graphs Ex 3: [BFS Traversal](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
-#### Graphs Ex 4: [Minimum number of edges between two nodes of a Graph](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
-#### Graphs Ex 5: [Number of islands](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/NumberOfIslands.java)
+#### Ex 1: [Implement a graph using adjacency list](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
+#### Ex 2: [DFS Traversal](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
+#### Ex 3: [BFS Traversal](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
+#### Ex 4: [Minimum number of edges between two nodes of a Graph](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/GraphWithAdjacencyList.java)
+#### Ex 5: [Number of islands](https://github.com/ubercareerprep2019/Uber-Career-Prep-Homework-Nilay/blob/master/Assignment-2/Graphs/NumberOfIslands.java)

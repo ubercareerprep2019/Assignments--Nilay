@@ -2,6 +2,8 @@ package homework2.Trees;
 
 import java.util.*;
 
+import homework2.Trees.Assets.Employee;
+
 public class OrganizationStructure {
 
 	// Main Method
@@ -40,7 +42,7 @@ public class OrganizationStructure {
 	 */
 
 	// Variables
-	public Employee ceo;
+	private Employee ceo;
 
 	// Constructor
 	public OrganizationStructure(Employee root) {
@@ -85,21 +87,3 @@ public class OrganizationStructure {
 
 }
 
-class Employee {
-	// Variables
-	public String name;
-	public String title;
-	public List<Employee> directReports;
-
-	// Constructor
-	public Employee(String n, String t, List<Employee> report) {
-		name = n;
-		title = t;
-		directReports = report;
-	}
-	
-	// Print function
-	public void print() {
-		System.out.println("Name: " + this.name + ", Title: " + this.title);
-	}
-}

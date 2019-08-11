@@ -1,5 +1,7 @@
 package homework2.Trees;
 
+import homework2.Trees.Assets.TreeNode;
+
 public class Tree<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
@@ -71,28 +73,4 @@ public class Tree<T extends Comparable<T>> {
 		}
 	}
 
-}
-
-/*
- * Given Starter Code
- */
-class TreeNode<T extends Comparable<T>> {
-	// Global Variables
-	public T data;
-	public TreeNode<T> left;
-	public TreeNode<T> right;
-
-	// Constructor
-	public TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
-		this.data = data;
-		this.left = left;
-		this.right = right;
-	}
-	
-	// Constructor
-	public TreeNode(T data) {
-		this.data = data;
-		this.left = null;
-		this.right = null;
-	}
 }

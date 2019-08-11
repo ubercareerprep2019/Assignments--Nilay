@@ -1,4 +1,4 @@
-package homework2.Trees;
+package homework2.Trees.Assets;
 
 /**
  * Interface for a phone book. Each entry in the phone book is made up of 2

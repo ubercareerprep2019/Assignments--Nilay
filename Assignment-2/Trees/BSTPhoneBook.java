@@ -1,5 +1,7 @@
 package homework2.Trees;
 
+import homework2.Trees.Assets.PhoneBook;
+
 public class BSTPhoneBook implements PhoneBook {
 	// Variables
 	private BinarySearchTree<BookEntry> tree;

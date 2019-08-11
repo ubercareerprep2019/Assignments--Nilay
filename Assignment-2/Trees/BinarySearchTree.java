@@ -1,5 +1,7 @@
 package homework2.Trees;
 
+import homework2.Trees.Assets.TreeNode;
+
 public class BinarySearchTree<T extends Comparable<T>> extends Tree<T> {
 
 	public static void main(String[] args) {
@@ -11,8 +13,8 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T> {
 		t1.insert(3);
 		t1.insert(9);
 
-		t1.print(1);
-		System.out.println(t1.search(9));
+		t1.print();
+		System.out.println(t1.find(9));
 	}
 
 	// Variables
@@ -81,10 +83,11 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T> {
 	 */
 
 	/*
-	 * NOTE: Only makes sense when the Tree consists of objects like Pair which have
-	 * a key and value. It searches the tree with the key passed in and returns an
+	 * It searches the tree with the key passed in and returns an
 	 * object with a matching key. If there is no object with the same key, it
 	 * return null. Used for the phonebook part.
+	 * NOTE: Only makes sense when the Tree consists of objects like Pair which have
+	 * a key and value.
 	 */
 	public T search(T key) {
 		return searchHelper(this.root, key);

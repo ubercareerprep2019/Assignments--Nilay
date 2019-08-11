@@ -2,6 +2,8 @@ package homework2.Trees;
 
 import java.util.*;
 
+import homework2.Trees.Assets.PhoneBook;
+
 public class ListPhoneBook implements PhoneBook {
 	// Variables
 	private List<BookEntry> list;
@@ -11,10 +13,12 @@ public class ListPhoneBook implements PhoneBook {
 		list = new ArrayList<BookEntry>();
 	}
 	
+	// returns the size of the book
 	public int size() {
 		return list.size();
 	}
 
+	// Inserts the name and phone number in the book by creating a new BookEntry
 	public void insert(String name, long phoneNumber) {
 		list.add(new BookEntry(name, phoneNumber));
 	}

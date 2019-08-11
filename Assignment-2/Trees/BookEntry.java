@@ -16,6 +16,7 @@ public class BookEntry extends Pair<String, Long> implements Comparable<BookEntr
 		return this.getKey().compareTo(e.getKey());
 	}
 	
+	@Override
 	public String toString() {
 		return ("Name: " + this.getKey() + " Number: " + this.getValue() + " | ");
 	}

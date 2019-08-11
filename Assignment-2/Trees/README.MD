@@ -28,7 +28,7 @@ The tree is a generic Binary Search Tree that is implemented using the `Tree` cl
 - Additional-
   - `search(T key)`
     - It searches the tree with the key passed in and returns an object with a matching key. If there is no object with the same key, it return null. Used for the `Phonebook` part.
-    - NOTE: Only makes sense when the Tree consists of objects like `Pair` which have a key and value.
+    - ***Note:* Only makes sense when the Tree consists of objects like `Pair` which have a key and value.
   - `size()`
     - returns the size of the Binary Search Tree
 

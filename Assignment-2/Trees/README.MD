@@ -23,7 +23,6 @@ The tree is a generic Binary Search Tree that is implemented using the `Tree` cl
 - Required-
   - `insert(T key)`
     - Inserts a key into this binary search tree in `O(log n)` time.
-
   - `find(T key)`
     - Checks whether or not a key exists in this binary search tree in `O(log n)` time
 - Additional-

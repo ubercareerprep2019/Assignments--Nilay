@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import homework2.Graphs.GraphWithAdjacencyList;
-import homework2.Graphs.GraphNode;
+import homework2.Graphs.Assets.GraphNode;
 
 public class Graph_Tests {
 
